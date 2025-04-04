@@ -5,19 +5,15 @@ name = "r2-registry"
 #  { pattern = "your.custom.domain", custom_domain = true } 
 # ]
 
-workers_dev = true #set to false to disable the default Worker domain (applicable only if custom domain is used instead)
 main = "./index.ts"
 compatibility_date = "2024-09-09"
 compatibility_flags = ["nodejs_compat"]
 
-## Production
-[env.production]
 r2_buckets = [
   { binding = "REGISTRY", bucket_name = "" }
 ]
 
-[env.production.vars]
-JWT_REGISTRY_TOKENS_PUBLIC_KEY = ""
+# JWT_REGISTRY_TOKENS_PUBLIC_KEY = ""
 
 # Secrets:
 # USERNAME/PASSWORD/READONLY_USERNAME/READONLY_PASSWORD if you want username/password based auth
